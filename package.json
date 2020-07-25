@@ -1,0 +1,52 @@
+{
+  "name": "lit-element-starter-ts",
+  "version": "0.0.0",
+  "description": "A simple web component",
+  "main": "my-element.js",
+  "module": "my-element.js",
+  "scripts": {
+    "build": "webpack --config webpack/webpack.config.prod.js",
+    "start": "webpack-dev-server --config webpack/webpack.config.dev.js",
+    "serve": "webpack-dev-server --config webpack/webpack.config.prod.js"
+  },
+  "keywords": [
+    "web-components",
+    "lit-element",
+    "typescript"
+  ],
+  "author": "The Polymer Authors",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "katex": "^0.12.0",
+    "lit-element": "^2.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-syntax-import-meta": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/katex": "^0.11.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-bundled-import-meta": "^0.3.2",
+    "babel-plugin-template-html-minifier": "^4.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.6.0",
+    "file-loader": "^6.0.0",
+    "glob": "^7.1.6",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.7",
+    "ts-lit-plugin": "^1.2.0",
+    "ts-loader": "^8.0.1",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
+  }
+}
