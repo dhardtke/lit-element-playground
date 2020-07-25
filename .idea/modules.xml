@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lit-element-starter-ts-master.iml" filepath="$PROJECT_DIR$/lit-element-starter-ts-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lit-element-starter-ts-master.iml" filepath="$PROJECT_DIR$/.idea/lit-element-starter-ts-master.iml" />
     </modules>
   </component>
 </project>
