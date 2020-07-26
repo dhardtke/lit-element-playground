@@ -1,5 +1,8 @@
 import {customElement, html, LitElement, property, query} from "lit-element";
 
+import * as katexCss from "katex/dist/katex.css";
+import renderMathInElement from "katex/dist/contrib/auto-render";
+
 /**
  * An example element.
  *
@@ -8,7 +11,7 @@ import {customElement, html, LitElement, property, query} from "lit-element";
  */
 @customElement("katex-formula")
 export class KatexFormula extends LitElement {
-    static css = import(/* webpackChunkName: "katex" */"katex/dist/katex.css");
+    static css = katexCss;
 
     @property()
     formula = `$f(x) = x^2$`;
@@ -19,26 +22,14 @@ export class KatexFormula extends LitElement {
     async performUpdate() {
         super.performUpdate();
 
-        // this.container.innerText = this.formula;
-        // renderMathInElement(this.container, {
-        //     delimiters: [
-        //         {left: "$$", right: "$$", display: true},
-        //         {left: "$", right: "$", display: false},
-        //         {left: "\\(", right: "\\)", display: false},
-        //         {left: "\\[", right: "\\]", display: true}
-        //     ]
-        // });
-
-        await import(/* webpackChunkName: "katex" */"katex/dist/contrib/auto-render").then(m => {
-            this.container.innerText = this.formula;
-            m.default(this.container, {
-                delimiters: [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\(", right: "\\)", display: false},
-                    {left: "\\[", right: "\\]", display: true}
-                ]
-            });
+        this.container.innerText = this.formula;
+        renderMathInElement(this.container, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false},
+                {left: "\\[", right: "\\]", display: true}
+            ]
         });
     }
 

@@ -24,14 +24,25 @@ module.exports = merge(base, {
     ],
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin({
-            extractComments: true,
-            parallel: true,
-            terserOptions: {
-                output: {
-                    comments: false
+        minimizer: [
+            new TerserPlugin({
+                extractComments: true,
+                parallel: true,
+                terserOptions: {
+                    output: {
+                        comments: false
+                    },
+                }
+            }), new OptimizeCSSAssetsPlugin({})
+        ],
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vendor",
+                    chunks: "all"
                 }
             }
-        }), new OptimizeCSSAssetsPlugin({})]
+        }
     }
 });
